@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sesotho Medical Voice Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f0f9ff;
+      }
+      .wave-animation span {
+        display: inline-block;
+        width: 6px;
+        background-color: white;
+        border-radius: 4px;
+        animation: wave 1s infinite ease-in-out;
+      }
+      .wave-animation span:nth-child(1) { animation-delay: 0.1s; height: 10px; }
+      .wave-animation span:nth-child(2) { animation-delay: 0.2s; height: 15px; }
+      .wave-animation span:nth-child(3) { animation-delay: 0.3s; height: 20px; }
+      .wave-animation span:nth-child(4) { animation-delay: 0.4s; height: 15px; }
+      .wave-animation span:nth-child(5) { animation-delay: 0.5s; height: 10px; }
+      
+      @keyframes wave {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(2); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

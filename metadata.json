@@ -1,0 +1,7 @@
+{
+  "name": "Sesotho Medical Voice Assistant",
+  "description": "An AI-powered voice assistant that listens to symptoms in Sesotho and provides medical guidance and safety assessments.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
