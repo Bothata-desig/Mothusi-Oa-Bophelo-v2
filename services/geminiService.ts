@@ -51,17 +51,18 @@ const analysisSchema: Schema = {
 };
 
 export const analyzeSymptoms = async (audioBlob: Blob): Promise<MedicalAnalysis> => {
-  if (!process.env.API_KEY) {
-    throw new Error("API Key is missing. Please set it in the environment.");
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("API Key is missing. Please set VITE_GEMINI_API_KEY in the environment.");
   }
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  
+  const ai = new GoogleGenAI({ apiKey });
+
   // Convert audio blob to base64
   const base64Audio = await blobToBase64(audioBlob);
 
   const model = "gemini-2.5-flash"; // Efficient for audio processing
-  
+
   const systemInstruction = `
     You are a helpful, empathetic medical assistant for Sesotho-speaking communities.
     Your goal is to listen to the patient's symptoms in Sesotho, transcribe them, and provide safety guidance.
